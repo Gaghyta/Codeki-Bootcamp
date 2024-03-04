@@ -1,7 +1,8 @@
+package com.CarlaAntonini;
+
 import java.util.Scanner;
 
 public class Operacion {
-
     // 1- Hacer los atributos pedidos en consigna como privados
     private double numero1;
     private double numero2;
@@ -48,6 +49,33 @@ public class Operacion {
         System.out.print("Ingrese el segundo número: ");
         this.numero2 = scanner.nextDouble();
 
-        scanner.close();
+        //scanner.close();
+
+    }
+
+        // OPERACIONES PEDIDAS
+
+    public double sumar() {
+        return this.numero1 + this.numero2;
+    }
+
+    public double restar() {
+        return this.numero1 - this.numero2;
+    }
+
+    public double multiplicar() {
+        if (this.numero2 == 0) {
+            System.out.println("Error: No se puede multiplicar por cero.");
+            return 0;
+        }
+        return this.numero1 * this.numero2;
+    }
+
+    public double dividir() {
+        if (this.numero2 == 0) {
+            System.out.println("Error: No se puede dividir por cero.");
+            return 0;
+        }
+        return this.numero1 / this.numero2;
     }
 }
