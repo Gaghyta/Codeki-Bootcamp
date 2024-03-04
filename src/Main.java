@@ -1,5 +1,3 @@
-package com.CarlaAntonini;
-
 public class Main {
     public static void main(String[] args) {
         // Almacenar el nombre en una variable
