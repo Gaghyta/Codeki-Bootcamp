@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Operacion {
 
     // 1- Hacer los atributos pedidos en consigna como privados
@@ -33,5 +35,19 @@ public class Operacion {
 
     public void setNumero2(double numero2) {
         this.numero2 = numero2;
+    }
+
+
+    // Realizo el método que pida dos números al usuario para hacer la operación deseada
+    public void crearOperacion() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el primer número: ");
+        this.numero1 = scanner.nextDouble();
+
+        System.out.print("Ingrese el segundo número: ");
+        this.numero2 = scanner.nextDouble();
+
+        scanner.close();
     }
 }
