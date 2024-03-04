@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static Scanner scanner;
+
     public static void main(String[] args) {
 
         // Creo una instancia de la clase Saludo para poder usarla
@@ -19,9 +21,98 @@ public class Main {
         // Creo una instancia de la clase Operacion para poder usarla
         Operacion operacion = new Operacion();
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 
-        // Menú interactivo
+        realizarOperacionesMatematicas(scanner);
+
+        // Programa de la clase Cuenta
+        ejecutarProgramaCuenta();
+
+
+        scanner.close();
+    }
+
+    private static void realizarOperacionesMatematicas(Scanner scanner) {
+        Operacion operacion = new Operacion();
+
+        // Bucle para realizar varias operaciones
+        while (true) {
+            mostrarMenuOperaciones();
+
+            // Obtener la operación deseada
+            int opcion = scanner.nextInt();
+
+            if (opcion == 0) {
+                // Salir del bucle si la opción es 0
+                break;
+            }
+
+            // Realizar la operación correspondiente
+            operacion.crearOperacion();
+            double resultado = realizarOperacion(opcion, operacion);
+
+            // Mostrar el resultado
+            System.out.println("Resultado: " + resultado);
+        }
+    }
+
+    private static void mostrarMenuOperaciones() {
+        System.out.println("Seleccione una operación:");
+        System.out.println("1. Sumar");
+        System.out.println("2. Restar");
+        System.out.println("3. Multiplicar");
+        System.out.println("4. Dividir");
+        System.out.println("0. Salir");
+        System.out.print("Ingrese el número de la operación deseada: ");
+    }
+
+    private static double realizarOperacion(int opcion, Operacion operacion) {
+        switch (opcion) {
+            case 1:
+                return operacion.sumar();
+            case 2:
+                return operacion.restar();
+            case 3:
+                return operacion.multiplicar();
+            case 4:
+                return operacion.dividir();
+            default:
+                System.out.println("Opción no válida. Por favor, elija una operación válida.");
+                return 0;
+        }
+    }
+
+    private static void ejecutarProgramaCuenta() {
+
+        // Solicitar datos al usuario para crear la cuenta
+        System.out.print("Ingrese el número de cuenta: ");
+        int numeroCuenta = scanner.nextInt();
+
+        System.out.print("Ingrese el DNI del cliente: ");
+        int dniCliente = scanner.nextInt();
+
+        System.out.print("Ingrese el saldo inicial: ");
+        double saldoInicial = scanner.nextDouble();
+
+        System.out.print("Ingrese la tasa de interés: ");
+        double tasaInteres = scanner.nextDouble();
+
+        // Crear una instancia de la clase Cuenta con los datos ingresados por el usuario
+        Cuenta cuenta = new Cuenta(numeroCuenta, dniCliente, saldoInicial, tasaInteres);
+
+        // Realizar algunas operaciones con la cuenta
+        cuenta.extraccionRapida();
+        cuenta.depositar(500.0);
+
+        // Mostrar información de la cuenta
+        cuenta.mostrarInformacion();
+        System.out.printf("Saldo actual: " + cuenta.consultarSaldo());
+    }
+
+
+
+
+    /*// Menú interactivo
         int opcion;
         do {
             System.out.println("\nSeleccione una operación:");
@@ -65,7 +156,7 @@ public class Main {
 
         // Cerrar el Scanner después de usarlo
         scanner.close();
-    }
+    }*/
 
 
         /*//SUMAR
