@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "41c86250-9b24-44c9-8117-31e580209b8c",
+		"name": "CODEKI-CRUD-Clase9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18775256"
+	},
+	"item": [
+		{
+			"name": "addAppointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"doctorName\": \"Dr. Marco\",\n  \"doctorLastname\": \"Ricci\",\n  \"medicalPacientName\": \"Isabella\",\n  \"medicalPacientLastName\": \"Rossi\",\n  \"specialty\": \"Orthopedics\",\n  \"appointmentDate\": \"2024-03-25T11:15:00\",\n  \"typeOfConsulting\": \"Orthopedic Consultation\",\n  \"medicalCoverage\": \"ItalianHealth\",\n  \"copayment\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allAppointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/appointments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppointmentById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAppointmentById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/appointments/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"doctorName\": \"Dr. Neme\",\n  \"doctorLastname\": \"Mario\",\n  \"medicalPacientName\": \"Carla\",\n  \"medicalPacientLastName\": \"Antonini\",\n  \"specialty\": \"Gastroenterología\",\n  \"appointmentDate\": \"2024-03-21T08:00:00\",\n  \"typeOfConsulting\": \"Revisión de estudios\",\n  \"medicalCoverage\": \"Osde\",\n  \"copayment\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
