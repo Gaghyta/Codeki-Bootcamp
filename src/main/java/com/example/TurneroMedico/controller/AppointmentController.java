@@ -40,6 +40,22 @@ public class AppointmentController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<Void> deleteAppointmentById(@PathVariable Long id) {
+        appointmentService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("update/{id}")
+    public ResponseEntity<String> updateAppointmentById(
+            @PathVariable Long id,
+            @RequestBody Appointment updatedAppointment) {
+        return appointmentService.updateById(id, updatedAppointment);
+    }
+
+
+
+
 
 
 
