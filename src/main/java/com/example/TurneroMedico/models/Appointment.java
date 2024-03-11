@@ -4,23 +4,22 @@ package com.example.TurneroMedico.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
+import lombok.*;
 
 
-@EqualsAndHashCode
 @ToString
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String doctorName;
     private String doctorLastname;
     private String medicalPacientName;
@@ -30,6 +29,7 @@ public class Appointment {
     private String typeOfConsulting;
     private String medicalCoverage;
     private Boolean copayment;
+
 
     public Appointment(String doctorName, String doctorLastname, String medicalPacientName, String medicalPacientLastName, String specialty, String appointmentDate, String typeOfConsulting, String medicalCoverage, Boolean copayment) {
         this.doctorName = doctorName;
