@@ -55,6 +55,11 @@ public class AppointmentController {
         return appointmentService.updateById(id, updatedAppointment);
     }
 
+    @GetMapping("/doctor-last-name")
+    public List<Appointment> findAppointmentByDoctorLastName(@RequestParam String doctorLastName ) {
+        return appointmentService.getByDoctorLastName(doctorLastName);
+    }
+
     @GetMapping("/grather-than-cost-appointments/{minCost}")
     public List<Appointment> findAppointmentsByCostGreaterThan(@PathVariable int minCost) {
         return appointmentService.findAppointmentsByCostGreaterThan(minCost);

@@ -21,7 +21,7 @@ public class Appointment {
     private Long id;
 
     private String doctorName;
-    private String doctorLastname;
+    private String doctorLastName;
     private String medicalPacientName;
     private String medicalPacientLastName;
     private String specialty;
@@ -32,9 +32,9 @@ public class Appointment {
     private Double cost;
 
 
-    public Appointment(String doctorName, String doctorLastname, String medicalPacientName, String medicalPacientLastName, String specialty, String appointmentDate, String typeOfConsulting, String medicalCoverage, Boolean copayment, Double cost) {
+    public Appointment(String doctorName, String doctorLastName, String medicalPacientName, String medicalPacientLastName, String specialty, String appointmentDate, String typeOfConsulting, String medicalCoverage, Boolean copayment, Double cost) {
         this.doctorName = doctorName;
-        this.doctorLastname = doctorLastname;
+        this.doctorLastName = doctorLastName;
         this.medicalPacientName = medicalPacientName;
         this.medicalPacientLastName = medicalPacientLastName;
         this.specialty = specialty;

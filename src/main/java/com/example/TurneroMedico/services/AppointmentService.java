@@ -56,4 +56,9 @@ public class AppointmentService {
         }
         return highCostAppointments;
     }
+
+    public List<Appointment> getByDoctorLastName(String doctorLastName) {
+        List<Appointment> appointments = appointmentRepository.findByDoctorLastName(doctorLastName);
+        return appointments;
+    }
 }
