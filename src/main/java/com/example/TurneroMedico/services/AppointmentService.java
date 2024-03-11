@@ -23,7 +23,7 @@ public class AppointmentService {
         appointmentRepository.save(appointment);
     }
 
-    public Appointment findById(Long id) {
-        return appointmentRepository.findById(id).orElse(null);
+    public Optional<Appointment> findById(Long id) {
+        return Optional.ofNullable(appointmentRepository.findById(id).orElse(null));
     }
 }
