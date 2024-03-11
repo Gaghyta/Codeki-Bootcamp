@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,5 +43,17 @@ public class AppointmentService {
             // Devuelve la respuesta con el código de estado 404 y un mensaje para que se sepa que el id que se ha enviado no remite a ningun turno.
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Appointment not found with id: " + id);
         }
+    }
+
+    public List<Appointment> findAppointmentsByCostGreaterThan(int minCost) {
+        List<Appointment> allAppointments = appointmentRepository.findAll();
+        List<Appointment> highCostAppointments = new ArrayList<>();
+
+        for (Appointment appointment : allAppointments) {
+            if (appointment.getCost() != null && appointment.getCost() > minCost) {
+                highCostAppointments.add(appointment);
+            }
+        }
+        return highCostAppointments;
     }
 }

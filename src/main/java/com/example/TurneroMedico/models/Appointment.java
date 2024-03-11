@@ -29,9 +29,10 @@ public class Appointment {
     private String typeOfConsulting;
     private String medicalCoverage;
     private Boolean copayment;
+    private Double cost;
 
 
-    public Appointment(String doctorName, String doctorLastname, String medicalPacientName, String medicalPacientLastName, String specialty, String appointmentDate, String typeOfConsulting, String medicalCoverage, Boolean copayment) {
+    public Appointment(String doctorName, String doctorLastname, String medicalPacientName, String medicalPacientLastName, String specialty, String appointmentDate, String typeOfConsulting, String medicalCoverage, Boolean copayment, Double cost) {
         this.doctorName = doctorName;
         this.doctorLastname = doctorLastname;
         this.medicalPacientName = medicalPacientName;
@@ -41,5 +42,9 @@ public class Appointment {
         this.typeOfConsulting = typeOfConsulting;
         this.medicalCoverage = medicalCoverage;
         this.copayment = copayment;
+        this.cost = cost;
     }
+
+
+
 }
