@@ -42,12 +42,19 @@ public class AppointmentController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteAppointmentById(@PathVariable Long id) {
         appointmentService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
+    //UPDATE SIN ID
+    @PutMapping("/update")
+    public Appointment update (@RequestBody Appointment appointment) {
+        return appointmentService.update(appointment);
+    }
+
+    //UPDATE CON ID
     @PutMapping("update/{id}")
     public ResponseEntity<String> updateAppointmentById(
             @PathVariable Long id,
